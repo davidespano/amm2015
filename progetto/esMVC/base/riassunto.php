@@ -9,38 +9,7 @@
         <link href="../css/responsive.css" rel="stylesheet" type="text/css" media="screen" />
     </head>
     <?php
-        session_start();
-        $nome ='';
-        $cognome ='';
-        $via = '';
-        $civico = '';
-        $cap = '';
-        $citta = '';
         
-        
-        if(isset($_SESSION['nome'])){
-            $nome = $_SESSION['nome'];
-        }
-        
-        if(isset($_SESSION['cognome'])){
-            $nome = $_SESSION['cognome'];
-        }
-        
-        if(isset($_SESSION['via'])){
-            $nome = $_SESSION['via'];
-        }
-        
-        if(isset($_SESSION['civico'])){
-            $nome = $_SESSION['civico'];
-        }
-        
-        if(isset($_SESSION['cap'])){
-            $nome = $_SESSION['cap'];
-        }
-        
-        if(isset($_SESSION['citta'])){
-            $nome = $_SESSION['citta'];
-        }
     ?>
     <body>
         <div id="page">
@@ -106,20 +75,20 @@
                 <div class="input-form">
                     <h3>Inserisci l'indirizzo del destinatario</h3>
 
-                    <form method="post" action="dimensioni.php">
+                    <form method="post" action="dimensione.php">
                         <label for="nome">Nome</label>
                         <input type="text" name="user" id="nome"/>
                         <br>
                         <label for="cognome">Cognome</label>
-                        <input type="text" name="cognome" id="cognome" value="<?= $nome ?>"/> 
+                        <input type="text" name="cognome" id="cognome"/> 
                         <label for="via">Via</label>
-                        <input type="text" name="via" id="via" value="<?= $cognome ?>"/> 
+                        <input type="text" name="via" id="via"/> 
                         <label for="civico">Numero Civico</label>
-                        <input type="text" name="civico" id="civico" value="<?= $civico ?>"/> 
+                        <input type="text" name="civico" id="civico"/> 
                         <label for="citta">Citt&agrave;</label>
-                        <input type="text" name="citta" id="citta" value="<?= $citta ?>"/> 
+                        <input type="text" name="citta" id="citta"/> 
                         <label for="cap">CAP</label>
-                        <input type="text" name="cap" id="cap" value="<?= $cap ?>"/> 
+                        <input type="text" name="cap" id="cap"/> 
                         <br/>
                         <button type="submit" value="destinatario">Salva</button>
                     </form>
