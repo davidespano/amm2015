@@ -108,7 +108,7 @@
 
                     <form method="post" action="dimensioni.php">
                         <label for="nome">Nome</label>
-                        <input type="text" name="user" id="nome"/>
+                        <input type="text" name="nome" id="nome"/>
                         <br>
                         <label for="cognome">Cognome</label>
                         <input type="text" name="cognome" id="cognome" value="<?= $nome ?>"/> 

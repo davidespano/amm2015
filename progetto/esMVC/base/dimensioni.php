@@ -12,7 +12,7 @@
     session_start();
     $nome = isset($_REQUEST['nome']) ? $_REQUEST['nome'] : null;
     $cognome = isset($_REQUEST['cognome']) ? $_REQUEST['cognome'] : null;
-    $via = isset($_REQUEST['cognome']) ? $_REQUEST['cognome'] : null;
+    $via = isset($_REQUEST['via']) ? $_REQUEST['via'] : null;
     $civico = isset($_REQUEST['civico']) ? $_REQUEST['civico'] : null;
     $civico = filter_var($civico, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
     $cap = isset($_REQUEST['cap']) ? $_REQUEST['cap'] : null;
@@ -23,7 +23,7 @@
     $errori = 0;
 
     if ($nome != null) {
-        $_SESSION['nome'] = $cognome;
+        $_SESSION['nome'] = $nome;
     } else {
         $messaggio .= '<li>Specificare il nome del destinatario</li>';
         $errori++;
@@ -132,6 +132,9 @@
                     <ul>
                           <?= $messaggio ?>
                     </ul>
+                    <form method="get" action="destinatario.php">
+                        <button type="submit" value="indietro">Indietro</button>
+                    </form>
                 </div>
                 <?php 
                     } else {
@@ -141,22 +144,18 @@
                 <div class="input-form">
                     <h3>Inserisci l'indirizzo del destinatario</h3>
 
-                    <form method="post" action="dimensione.php">
-                        <label for="nome">Nome</label>
-                        <input type="text" name="user" id="nome"/>
+                    <form method="post" action="riassunto.php">
+                        <label for="larghezza">Larghezza</label>
+                        <input type="text" name="larghezza" id="larghezza"/>
                         <br>
-                        <label for="cognome">Cognome</label>
-                        <input type="text" name="cognome" id="cognome"/> 
-                        <label for="via">Via</label>
-                        <input type="text" name="via" id="via"/> 
-                        <label for="civico">Numero Civico</label>
-                        <input type="text" name="civico" id="civico"/> 
-                        <label for="citta">Citt&agrave;</label>
-                        <input type="text" name="citta" id="citta"/> 
-                        <label for="cap">CAP</label>
-                        <input type="text" name="cap" id="cap"/> 
+                        <label for="altezza">Altezza</label>
+                        <input type="text" name="altezza" id="altezza"/> 
+                        <label for="via">Profondit&agrave;</label>
+                        <input type="text" name="profondita" id="profondita"/> 
+                        <label for="via">Peso;</label>
+                        <input type="text" name="peso" id="peso"/> 
                         <br/>
-                        <button type="submit" value="destinatario">Salva</button>
+                        <button type="submit" value="destinatario">Spedisci</button>
                     </form>
                 </div>
                 <?php
