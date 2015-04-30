@@ -1,7 +1,8 @@
 <div class="input-form">
     <h3>Inserisci l'indirizzo del destinatario</h3>
 
-    <form method="post" action="riassunto.php">
+    <form method="post" action="index.php?page=spedizione">
+        <input type='hidden' name="cmd" value='pacco'/>
         <label for="larghezza">Larghezza</label>
         <input type="text" name="larghezza" id="larghezza"/>
         <br>

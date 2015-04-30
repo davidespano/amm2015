@@ -1,5 +1,7 @@
 <?php
 include_once './view/ViewDescriptor.php';
+include_once './controller/SimpleController.php';
+
 
 date_default_timezone_set("Europe/Rome");
 // punto unico di accesso all'applicazione
@@ -21,8 +23,9 @@ class FrontController {
         if (isset($request["page"])) {
 
             switch ($request["page"]) {
-                case "destinatario":
-                    
+                case "spedizione":
+                    $controller = new SimpleController();
+                    $controller->handleInput($request);
                     break;
            default:
                     self::write404();
